@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<link rel="icon" href="images/bees.png">
+	
+	<title>TravelBees</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style/jumbotron.css">
+</head>
+<body>
+	<!--======== Navigation ========-->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Welcome, Traveller</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="#">Browse Requests</a><li>
+					<li><a href="#">Post Request</a><li>
+					<li><a href="#">Post Trip</a><li>
+					<li><a href="#">How It Works</a><li>
+					<!--User only-->
+					<li><a href="#">Inbox</a><li>
+				</ul>
+				<form class="navbar-form navbar-right">
+					<div class="form-group">
+						<input type="text" placeholder="Email" class="form-control">
+					</div>
+					<div class="form-group">
+						<input type="password" placeholder="Password" class="form-control">
+					</div>
+					<button type="submit" class="btn btn-primary">Sign in</button>
+					<button type="submit" class="btn btn-success">Sign up</button>
+				</form>
+			</div><!--/.navbar-collapse -->
+		</div>
+	</nav>
+		
+	<!--======== Masthead ========-->
+	<div class="jumbotron">
+		<div class="container">
+			<h1>TravelBees</h1>
+			<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+			<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+		</div>
+	</div>
+	
+	<!--======== Search form ========-->
+	<center>
+	<form class="form-inline">
+		<div class="container">
+			<div class="form-group">
+				<label for="itemQuery">Search:</label>
+				<input type="text" class="form-control" id="itemQuery" placeholder="What are you looking for?">
+			</div>
+			<button type="submit" class="btn btn-default">Search</button>
+		</div>
+	</form>
+	</center>
+	<!--include JS scripts-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
