@@ -47,35 +47,39 @@
 	</nav>
 		
 	<div class="container">
-
-		<form class="form-signin">
-			<h2 class="form-signin-heading">Sign Up</h2>
-			<div class="form-group">
-				<label for="inputEmail1">Email address</label>
-				<input type="email" class="form-control" id="inputEmail1" placeholder="Email">
-				<!-- useful for warnings-->
-				<p class="help-block">Example block-level help text here.</p>				
-			</div>
-			<div class="form-group">
-				<label for="inputUsername">Username</label>
-				<input type="text" class="form-control" id="inputUsername" placeholder="Username">
-				<!-- useful for warnings-->
-				<p class="help-block">Example block-level help text here.</p>
-			<div class="form-group">
-				<label for="inputPassword1">Password</label>
-				<input type="password" class="form-control" id="inputPassword1" placeholder="Password">
-				<!-- useful for warnings-->
-				<p class="help-block">Example block-level help text here.</p>				
-			</div>
-			<div class="form-group">
-				<label for="inputPassword2">Re-enter Password</label>
-				<input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-				<!-- useful for warnings-->
-				<p class="help-block">Example block-level help text here.</p>				
-			</div>
-			<button class="btn btn-lg btn-success btn-block" type="submit">Sign Up</button>
-		</form>
-
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<form class="form-signin">
+					<h2 class="form-signin-heading">Sign Up</h2>
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+						<input id="inputEmail" type="text" class="form-control" name="inputEmail" placeholder="Email">
+					</div>	
+					<!-- useful for warnings-->
+					<p class="help-block">Example block-level help text here.</p>				
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						<input type="text" class="form-control" id="inputUsername" name="inputUsername" placeholder="Username">
+					</div>
+					<!-- useful for warnings-->				
+					<p class="help-block">Example block-level help text here.</p>			
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+						<input type="password" class="form-control" id="inputPassword1" name="inputPassword1" placeholder="Password">
+					</div>
+					<!-- useful for warnings-->
+					<p class="help-block">Example block-level help text here.</p>				
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+						<input type="password" class="form-control" id="inputPassword2" name="inputPassword2" placeholder="Password">
+					</div>
+					<!-- useful for warnings-->
+					<p class="help-block">Example block-level help text here.</p>				
+					
+					<button class="btn btn-lg btn-success btn-block" type="submit">Sign Up</button>
+				</form>			
+			</div><!--/col-sm-4 col-sm-offset-4-->
+		</div><!--/row-->
 	</div> <!-- /container -->
 
 	<!--include JS scripts-->
