@@ -64,7 +64,7 @@
 						<p class="help-block">Example block-level help text here.</p>
 					<div class="form-group">
 						<label for="category">Category</label>
-						<select name="category" id="itemCategory">
+						<select class="form-control" name="category" id="itemCategory">
 							<option value="All">All Categories</option>
 							<option value="foodDrinks">Food and Drinks</option>
 							<option value="collectibles">Collectibles</option>
@@ -72,7 +72,8 @@
 					</div>
 					<div class="form-group">
 						<label for="inputImage">Upload a picture</label><br>
-						<img src="http://placehold.it/250x250">
+						
+						<center><img src="http://placehold.it/250x250"></center>
 						<input type="file" class="form-control" name="inputImage" id="inputImage" accept="image/*">
 						<!-- useful for warnings-->
 						<p class="help-block">Example block-level help text here.</p>				
@@ -85,8 +86,8 @@
 					</div>
 					<div class="form-group">
 						<label for="itemCountry">Country</label>
-						<select name="country" id="country">
-							<option value="Countries">Countries</option>
+						<select class="form-control" name="country" id="country">
+							<option value="">Choose Country</option>
 						
 							<option value="Australia">Australia</option>
 							<option value="Japan">Japan</option>
@@ -98,7 +99,7 @@
 					</div>
 					<div class="form-group">
 						<label for="itemSize">Item Size</label>
-						<select name="itemSize" id="itemSize">
+						<select class="form-control" name="itemSize" id="itemSize">
 							<option value="small">Small</option>
 							<option value="medium">Medium</option>
 							<option value="large">Large</option>

@@ -54,13 +54,18 @@
 					<h2 class="form-post-heading">Post Trip</h2>				
 					<div class="form-group">
 						<label for="itemCountry">Country</label>
-						<select name="country" id="country">
-							<option value="Countries">Countries</option>
-						
+						<select class="form-control" name="country" id="country">
+							<option value="">Choose Country</option>
 							<option value="Australia">Australia</option>
 							<option value="Japan">Japan</option>
-						</select>			
-					</div>		
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="returnDate">Return date to Australia</label>
+						<input type="date" class="form-control" id="returnDate" name="returnDate">
+						<!-- useful for warnings-->
+						<p class="help-block">Example block-level help text here.</p>				
+					</div>					
 					<button class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
 				</form>
 			</div><!--/col-sm-4 col-sm-offset-4-->
