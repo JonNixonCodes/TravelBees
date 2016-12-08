@@ -13,41 +13,10 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<!--======== Navigation ========-->
-			<nav class="navbar navbar-inverse navbar-fixed-top">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="#">Welcome, Traveller</a>
-					</div>
-					<div id="navbar" class="navbar-collapse collapse">
-						<ul class="nav navbar-nav">
-							<li><a href="#">Browse Requests</a><li>
-							<li><a href="#">Post Request</a><li>
-							<li><a href="#">Post Trip</a><li>
-							<li><a href="#">How It Works</a><li>
-							<!--User only-->
-							<li><a href="#">Inbox</a><li>
-						</ul>
-						<form class="navbar-form navbar-right">
-							<div class="form-group">
-								<input type="text" placeholder="Email" class="form-control">
-							</div>
-							<div class="form-group">
-								<input type="password" placeholder="Password" class="form-control">
-							</div>
-							<button type="submit" class="btn btn-primary">Sign in</button>
-							<button type="submit" class="btn btn-success">Sign up</button>
-						</form>
-					</div><!--/.navbar-collapse -->
-				</div>
-			</nav>		
-		</div>
+		<!--======== Navigation ========-->
+		<?php include 'header.php'; ?>
+
+		<!--======== Form ========-->
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3">
 				<form class="form-post">
@@ -60,6 +29,12 @@
 							<option value="Japan">Japan</option>
 						</select>
 					</div>
+					<div class="form-group">
+						<label for="arrivalDate">Arrival date to country</label>
+						<input type="date" class="form-control" id="arrivalDate" name="arrivalDate">
+						<!-- useful for warnings-->
+						<p class="help-block">Example block-level help text here.</p>				
+					</div>						
 					<div class="form-group">
 						<label for="returnDate">Return date to Australia</label>
 						<input type="date" class="form-control" id="returnDate" name="returnDate">

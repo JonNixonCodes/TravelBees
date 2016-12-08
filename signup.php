@@ -11,42 +11,11 @@
 	<link rel="stylesheet" href="style/signup.css">	
 </head>
 <body>
-	<!--======== Navigation ========-->
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Welcome, Traveller</a>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="#">Browse</a><li>
-					<li><a href="#">Post Request</a><li>
-					<li><a href="#">Post Trip</a><li>
-					<li><a href="#">How It Works</a><li>
-					<!--User only-->
-					<li><a href="#">Inbox</a><li>
-				</ul>
-				<form class="navbar-form navbar-right">
-					<div class="form-group">
-						<input type="text" placeholder="Email" class="form-control">
-					</div>
-					<div class="form-group">
-						<input type="password" placeholder="Password" class="form-control">
-					</div>
-					<button type="submit" class="btn btn-primary">Sign in</button>
-					<button type="submit" class="btn btn-success">Sign up</button>
-				</form>
-			</div><!--/.navbar-collapse -->
-		</div>
-	</nav>
-		
 	<div class="container">
+		<!--======== Navigation ========-->
+		<?php include 'header.php'; ?>
+		
+		<!--======== Form ========-->
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-4">
 				<form class="form-signin">
