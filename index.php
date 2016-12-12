@@ -9,14 +9,19 @@
 		//execute query
 		$sqlQuery = "SELECT * FROM user WHERE Username = '" . $username . "';";
 		$result = $conn->query($sqlQuery);
+		if (!$result) {
+			echo "Error executing query";
+			exit();
+		}
+		
 		if ($result->num_rows == 1) {
 			$row = $result->fetch_assoc();
 		} else if ($result->num_rows > 1) {
 			echo "Too many rows";
-			exit;
+			exit();
 		} else if ($result->num_rows == 0) {
 			echo "No rows found: Invalid username";
-			exit;
+			exit();
 		}
 		
 		//check password
@@ -25,7 +30,7 @@
 			$admin = $row['Admin'];
 		} else {
 			echo "Wrong password";
-			exit;
+			exit();
 		}
 		$password = null; //clear password
 		

@@ -1,6 +1,61 @@
 <!DOCTYPE html>
 <?php
 	include("session.php");
+	include('connect.php');
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {		
+		$email = $_POST['inputEmail'];
+		$username = $_POST['inputUsername'];
+		$password1 = $_POST['inputPassword1'];
+		$password2 = $_POST['inputPassword2'];
+		
+		$registered = false;
+		
+		//verify username uniqueness
+		$queryUsername = "SELECT * FROM user
+											WHERE Username = '" . $username . "';";
+		$resultUsername = $conn->query($queryUsername);
+		if ($resultUsername->num_rows != 0) {
+			echo "An account already exists under this username!";
+			exit();
+		}
+		//verify email uniqueness
+		$queryEmail = "SELECT * FROM user
+											WHERE Email = '" . $email . "';";
+		$resultEmail = $conn->query($queryEmail);
+		if ($resultEmail->num_rows != 0) {
+			echo "An account already exists under this email!";
+			exit();
+		}											
+		//verify password
+		if ($password1 === $password2) {
+			$password = $password1;
+		} else {
+			echo "Passwords do not match";
+			exit();
+		}
+		//execute sign up
+		$sqlQuery = "INSERT INTO user (Email, Username, Password)
+								 VALUES ('" . $email . "', '" . $username . "', '" . $password . "');";
+		$result = $conn->query($sqlQuery);
+		if (!$result) {
+			echo "Error executing query";
+			exit();
+		}
+
+		//clear passwords
+		$password = null;
+		$password1 = null;
+		$password2 = null;
+		
+		//add to session data
+		$_SESSION['username'] = $username;
+		$_SESSION['admin'] = $admin;
+		$_SESSION['registered'] = $registered;
+		//echo $_SESSION['registered'];
+		//close connection
+		$conn->close();
+		header("Location: index.php");
+	}	
 ?>
 <html lang="en">
 <head>
@@ -21,7 +76,7 @@
 		<!--======== Form ========-->
 		<div class="row">
 			<div class="col-sm-4 col-sm-offset-4">
-				<form class="form-signin">
+				<form class="form-signin" method="post" action="">
 					<h2 class="form-signin-heading">Sign Up</h2>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
