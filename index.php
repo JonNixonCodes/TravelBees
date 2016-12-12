@@ -1,4 +1,43 @@
 <!DOCTYPE html>
+<?php
+	include("session.php");
+	include('connect.php');
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {		
+		$username = $_POST['inputUsername'];
+		$password = $_POST['inputPassword'];
+		$registered = false;
+		//execute query
+		$sqlQuery = "SELECT * FROM user WHERE Username = '" . $username . "';";
+		$result = $conn->query($sqlQuery);
+		if ($result->num_rows == 1) {
+			$row = $result->fetch_assoc();
+		} else if ($result->num_rows > 1) {
+			echo "Too many rows";
+			exit;
+		} else if ($result->num_rows == 0) {
+			echo "No rows found: Invalid username";
+			exit;
+		}
+		
+		//check password
+		if ($password == $row['Password']) {
+			$registered = true;
+			$admin = $row['Admin'];
+		} else {
+			echo "Wrong password";
+			exit;
+		}
+		$password = null; //clear password
+		
+		//add to session data
+		$_SESSION['username'] = $username;
+		$_SESSION['admin'] = $admin;
+		$_SESSION['registered'] = $registered;
+		//echo $_SESSION['registered'];
+		//close connection
+		$conn->close();
+	}
+?>
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
@@ -10,6 +49,12 @@
 	<link rel="stylesheet" href="style/jumbotron.css">
 </head>
 <body>
+	<?php 
+	//echo ($_SERVER["REQUEST_METHOD"] == "POST");
+		if(isset($registered)) {
+			//echo isset($registered);
+		}
+	?>
 	<div class="container">
 		<!--======== Navigation ========-->
 		<?php include 'header.php'; ?>

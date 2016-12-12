@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+	include("session.php");
+	echo $_SESSION['registered'];
+?>
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>

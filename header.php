@@ -12,25 +12,34 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="browse.php">Browse Requests</a><li>
+					<li><a href="browse.php">Browse Requests</a><li>					
+<?php if($registered === true): ?> <!--User only-->
 					<li><a href="postRequest.php">Post Request</a><li>
 					<li><a href="postTrip.php">Post Trip</a><li>
-					<li><a href="how-it-works.php">How It Works</a><li>
-					<!--User only-->
+<?php endif ?>
+					<li><a href="how-it-works.php">How It Works</a><li>					
+<?php if($registered === true): ?> <!--User only-->
 					<li><a href="#">Inbox</a><li>
+<?php endif ?>
 				</ul>
-				<form class="navbar-form navbar-right">
+<?php if($registered != true): ?>
+				<form class="navbar-form navbar-right" action="index.php" method="post">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-						<input id="email" type="text" class="form-control" name="email" placeholder="Email">
+						<input id="inputUsername" type="text" class="form-control" name="inputUsername" placeholder="Username"> <!--Can add signin by email later-->
 					</div>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-						<input id="password" type="password" class="form-control" name="password" placeholder="Password">
+						<input id="inputPassword" type="password" class="form-control" name="inputPassword" placeholder="Password">
 					</div>
 					<button type="submit" class="btn btn-primary">Sign in</button>
-					<button type="submit" class="btn btn-success">Sign up</button>
+					<button class="btn btn-success" type="button" onClick="location.href='signup.php';">Sign up</button>
 				</form>
+<?php else: ?>
+				<div class="navbar-form navbar-right">
+					<button class="btn btn-primary" type="button" onClick="location.href='signout.php';">Sign out</button>
+				</div>
+<?php endif ?>
 			</div><!--/.navbar-collapse -->
 		</div>
 	</nav>		
